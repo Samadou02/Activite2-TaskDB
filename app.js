@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 5000;
+const port = 3000;
 
 app.use(bodyParser.json());
 
@@ -22,7 +22,7 @@ const taskSchema = new mongoose.Schema({
 const Task = mongoose.model('Task', taskSchema);
 
 // Récupérer toutes les tâches
-app.get('/tasks', async (req, res) => {
+app.get('/task', async (req, res) => {
     try {
         const tasks = await Task.find();
         res.json(tasks);
